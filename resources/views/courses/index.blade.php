@@ -41,12 +41,15 @@
                     </a>
 
                     <!-- Courses -->
-                    <a href="{{ route('courses.index') }}" class="text-yellow-300 font-semibold">
+                    <a href="{{ route('courses.index') }}" class="px-4 py-2 rounded-xl text-sm font-semibold bg-blue-600 text-white shadow-lg">
                         Courses
                     </a>
 
                     <a href="{{ route('professors.index') }}" class="text-white hover:text-blue-200 transition">
                         Professors
+                    </a>
+                    <a href="{{ route('about.index') }}" class="text-white hover:text-blue-200 transition">
+                        About Us
                     </a>
                 </div>
             </div>
@@ -235,9 +238,9 @@
                     </div>
 
                     <!-- Button -->
-                    <button class="mt-8 w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-2xl font-semibold transition duration-300 shadow-md">
-                        Enroll Now
-                    </button>
+                    <a href="{{ route('courses.enroll', $loop->index) }}" class="block text-center mt-8 w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-2xl font-semibold transition duration-300 shadow-md">
+                    Enroll Now
+                    </a>
                 </div>
             </div>
             @endforeach
@@ -283,6 +286,11 @@
                                 Professors
                             </a>
                         </li>
+                        <li>
+                            <a href="{{ route('about.index') }}" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">
+                                About Us
+                            </a>
+                        </li>   
                     </ul>
                 </div>
 

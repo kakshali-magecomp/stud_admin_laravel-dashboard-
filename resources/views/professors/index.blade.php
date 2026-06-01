@@ -45,12 +45,16 @@
                         Dashboard
                     </a>
 
-                    <a href="{{ route('courses.index') }}" class="px-4 py-2 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+                    <a href="{{ route('courses.index') }}"  class="px-4 py-2 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition">
                         Courses
                     </a>
 
                     <a href="{{ route('professors.index') }}" class="px-4 py-2 rounded-xl text-sm font-semibold bg-blue-600 text-white shadow-lg">
                         Professors
+                    </a>
+
+                    <a href="{{ route('about.index') }}"  class="px-4 py-2 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+                        About Us
                     </a>
                 </div>
             </div>

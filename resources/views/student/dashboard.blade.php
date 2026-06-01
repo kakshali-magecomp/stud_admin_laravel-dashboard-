@@ -58,6 +58,10 @@
                 <a href="{{ route('professors.index') }}" class="hidden md:block bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-xl transition duration-300">
                     Professors
                 </a>
+                <!-- About Us -->
+                <a href="{{ route('about.index') }}" class="hidden md:block bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-xl transition duration-300">
+                    About Us
+                </a>
 
                 <!-- Theme Toggle -->
                 <button onclick="toggleTheme()" class="bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-xl transition duration-300">

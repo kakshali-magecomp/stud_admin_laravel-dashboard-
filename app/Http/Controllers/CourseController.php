@@ -1,11 +1,14 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
+
 class CourseController extends Controller
 {
-    public function index()
+    private function getCourses()
     {
-        $courses = [
+        return [
 
             [
                 'title' => 'Computer Sci. Engineering',
@@ -62,7 +65,39 @@ class CourseController extends Controller
             ]
 
         ];
+    }
+
+    public function index()
+    {
+        $courses = $this->getCourses();
 
         return view('courses.index', compact('courses'));
+    }
+
+    public function enroll($id)
+    {
+        $courses = $this->getCourses();
+
+        if (!isset($courses[$id])) {
+            abort(404);
+        }
+
+        $course = $courses[$id];
+
+        return view('courses.enroll', compact('course'));
+    }
+
+    public function storeEnrollment(Request $request)
+    {
+        $request->validate([
+            'name'   => 'required',
+            'email'  => 'required|email',
+            'phone'  => 'required',
+            'course' => 'required',
+        ]);
+
+        return redirect()
+            ->route('courses.index')
+            ->with('success', 'Enrollment Successful!');
     }
 }

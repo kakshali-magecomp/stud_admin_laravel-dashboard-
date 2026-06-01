@@ -9,6 +9,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ProfessorController;
+use App\Http\Controllers\AboutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,6 +66,12 @@ Route::middleware(['auth', 'role:student'])->group(function () {
     Route::get('/courses', [CourseController::class, 'index'])
         ->name('courses.index');
 
+    Route::get('/courses/enroll/{id}', [CourseController::class, 'enroll'])
+        ->name('courses.enroll');
+
+    Route::post('/courses/enroll', [CourseController::class, 'storeEnrollment'])
+        ->name('courses.storeEnrollment');
+
 
     /*
     |--------------------------------------------------------------------------
@@ -79,6 +86,9 @@ Route::middleware(['auth', 'role:student'])->group(function () {
     // Single Professor Details Page
     Route::get('/professors/{id}', [ProfessorController::class, 'show'])
         ->name('professors.show');
+
+    Route::get('/about', [AboutController::class, 'index'])
+    ->name('about.index');
 
 });
 
