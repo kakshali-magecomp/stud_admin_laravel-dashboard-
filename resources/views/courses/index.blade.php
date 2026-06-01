@@ -31,9 +31,12 @@
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             <!-- Left -->
             <div class="flex items-center gap-6">
+                <a href="{{ route('lang.switch', 'en') }}">English</a> |
+                <a href="{{ route('lang.switch', 'hi') }}">Hindi</a>
                 <h1 class="text-2xl font-bold text-white tracking-wide">
                     Student Portal
                 </h1>
+                <h1>{{ __('messages.welcome') }}</h1>
 
                 <div class="hidden md:flex items-center gap-4 text-sm">
                     <a href="{{ route('student.dashboard') }}" class="text-white hover:text-blue-200 transition">
@@ -173,7 +176,7 @@
 
                 <!-- Image -->
                 <div class="relative h-60 overflow-hidden">
-                    <img src="{{ asset($course['image']) }}" alt="Course" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <img src="{{ asset($course->image) }}" alt="Course" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
 
                     <!-- Overlay -->
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -182,7 +185,7 @@
                     <div class="absolute top-4 left-4">
 
                         <span class="bg-blue-600 text-white text-xs px-4 py-2 rounded-full font-semibold shadow-md">
-                            {{ $course['category'] }}
+                            {{ $course->category }}
                         </span>
                     </div>
                 </div>
@@ -192,12 +195,12 @@
 
                     <!-- Title -->
                     <h2 class="text-2xl font-bold text-gray-800 dark:text-white">
-                        {{ $course['title'] }}
+                        {{ $course->title }}
                     </h2>
 
                     <!-- Description -->
                     <p class="mt-4 text-sm text-gray-600 dark:text-gray-300 leading-7">
-                        {{ $course['description'] }}
+                        {{ $course->description }}
                     </p>
 
                     <!-- Divider -->
@@ -212,7 +215,7 @@
                                 Duration
                             </span>
                             <span class="text-sm font-bold text-gray-800 dark:text-white">
-                                {{ $course['duration'] }}
+                                {{ $course->duration }}
                             </span>
                         </div>
 
@@ -222,7 +225,7 @@
                                 Students Enrolled
                             </span>
                             <span class="text-sm font-bold text-gray-800 dark:text-white">
-                                {{ $course['students'] }}+
+                                {{ $course->students }}+
                             </span>
                         </div>
 

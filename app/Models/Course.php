@@ -18,6 +18,7 @@ class Course extends Model
 
     public function enrollments()
     {
+        //This defines a one-to-many relationship. A course can have many enrollments.
         return $this->hasMany(Enrollment::class,'course_id','id');
     }
 }

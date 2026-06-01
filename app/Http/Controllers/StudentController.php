@@ -10,6 +10,7 @@ class StudentController extends Controller
 {
     public function index(Request $request)
     {
+        
         $student = Auth::user();
 
         $colleges = collect([
@@ -56,25 +57,25 @@ class StudentController extends Controller
 
         // Pagination Logic
         $perPage = 1;
-
+        // Get current page from the request, default to 1
         $currentPage = LengthAwarePaginator::resolveCurrentPage();
-
+        // Slice the collection to get the items for the current page
         $currentItems = $colleges->slice(($currentPage - 1) * $perPage, $perPage)->values();
-
+        // Create a new LengthAwarePaginator instance
         $paginatedColleges = new LengthAwarePaginator(
             $currentItems,
             $colleges->count(),
             $perPage,
             $currentPage,
             [
-                'path' => $request->url(),
-                'query' => $request->query(),
+                'path' => $request->url(),  // Base URL for pagination links
+                'query' => $request->query(), //  Keep existing query parameters
             ]
         );
 
         return view('student.dashboard', [
             'student' => $student,
-            'colleges' => $paginatedColleges
+            'colleges' => $paginatedColleges // Pass the paginated collection to the view
         ]);
     }
 }

@@ -37,9 +37,11 @@
                 <h1 class="text-2xl font-bold text-white tracking-wide">
                     Student Portal
                 </h1>
+                <!-- {{ __('messages.welcome') }} -->
                 <span class="hidden sm:block bg-blue-700 dark:bg-gray-700 text-white text-sm px-3 py-1 rounded-full capitalize">
                     {{ $student->role }} Panel
                 </span>
+                <!-- {{ __('messages.enroll_now') }} -->
             </div>
 
             <!-- Right -->

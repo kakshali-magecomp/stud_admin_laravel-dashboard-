@@ -26,6 +26,7 @@ class CourseController extends Controller
             'course_id' => 'required|exists:courses,id',
         ]);//Validate that the course_id is provided and exists in the courses table
 
+        
         Enrollment::create([
             'user_id' => auth()->id(),
             'course_id' => $request->course_id,
