@@ -238,7 +238,7 @@
                     </div>
 
                     <!-- Button -->
-                    <a href="{{ route('courses.enroll', $loop->index) }}" class="block text-center mt-8 w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-2xl font-semibold transition duration-300 shadow-md">
+                    <a href="{{ route('courses.enroll', $course->id) }}" class="block text-center mt-8 w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-2xl font-semibold transition duration-300 shadow-md">
                     Enroll Now
                     </a>
                 </div>

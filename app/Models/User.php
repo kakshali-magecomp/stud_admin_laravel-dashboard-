@@ -30,4 +30,14 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public function enrollments()
+    {
+        //This defines a one-to-many relationship. A user can have many enrollments.
+        return $this->hasMany(Enrollment::class);
+    }
+    public function courses()
+    {
+        //This is a many-to-many relationship. A user can enroll in many courses, and a course can have many users enrolled.
+        return $this->belongsToMany(Course::class, 'enrollments', 'user_id', 'course_id');
+    }
 }

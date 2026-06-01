@@ -21,5 +21,10 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+
+        $this->call([//Call the CourseSeeder to run it when we run the DatabaseSeeder
+        CourseSeeder::class,//Run CourseSeeder inside DatabaseSeeder
+    ]);
     }
+    
 }

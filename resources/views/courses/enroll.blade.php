@@ -105,8 +105,8 @@
                 @csrf
 
                 <input type="hidden"
-                    name="course"
-                    value="{{ $course['title'] }}">
+                    name="course_id"
+                    value="{{ $course['id'] }}">
 
                 <div>
                     <label class="block mb-2 font-medium text-gray-700 dark:text-gray-300">
