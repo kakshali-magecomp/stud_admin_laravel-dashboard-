@@ -37,11 +37,16 @@
                 <h1 class="text-2xl font-bold text-white tracking-wide">
                     Student Portal
                 </h1>
+                <!-- <a href="{{ route('lang.switch', 'en') }}" class="text-white hover:text-blue-200 transition">
+                    English
+                </a> |
+                <a href="{{ route('lang.switch', 'hi') }}" class="text-white hover:text-blue-200 transition">
+                    Hindi
+                </a> -->
                 <!-- {{ __('messages.welcome') }} -->
                 <span class="hidden sm:block bg-blue-700 dark:bg-gray-700 text-white text-sm px-3 py-1 rounded-full capitalize">
                     {{ $student->role }} Panel
                 </span>
-                <!-- {{ __('messages.enroll_now') }} -->
             </div>
 
             <!-- Right -->

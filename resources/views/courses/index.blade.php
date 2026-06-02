@@ -31,12 +31,18 @@
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             <!-- Left -->
             <div class="flex items-center gap-6">
-                <a href="{{ route('lang.switch', 'en') }}">English</a> |
-                <a href="{{ route('lang.switch', 'hi') }}">Hindi</a>
+                <a href="{{ route('lang.switch', 'en') }}" class="text-white hover:text-blue-200 transition">
+                    English
+                </a> |
+                <a href="{{ route('lang.switch', 'hi') }}" class="text-white hover:text-blue-200 transition">
+                    Hindi
+                </a>
                 <h1 class="text-2xl font-bold text-white tracking-wide">
                     Student Portal
                 </h1>
-                <h1>{{ __('messages.welcome') }}</h1>
+                <h1 class="text-2xl  text-white tracking-wide">
+                    {{ __('messages.welcome') }}
+                </h1>
 
                 <div class="hidden md:flex items-center gap-4 text-sm">
                     <a href="{{ route('student.dashboard') }}" class="text-white hover:text-blue-200 transition">
